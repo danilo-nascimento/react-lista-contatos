@@ -4,9 +4,7 @@ import React from 'react'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import BotaoCabecalho from '../componentes/BotaoCabecalho'
 import Cores from '../constantes/Cores'
-import DetalhesDoContatoTela from '../telas/DetalhesDoContatoTela'
 import ListaDeContatosTela from '../telas/ListaDeContatosTela'
-import MapaTela from '../telas/MapaTela'
 import NovoContatoTela from '../telas/NovoContatoTela'
 
 const Stack = createNativeStackNavigator()

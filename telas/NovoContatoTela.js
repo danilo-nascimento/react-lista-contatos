@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Button, ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import * as contatosActions from '../store/contatos-actions'
 import Cores from '../constantes/Cores'
 import { useDispatch } from 'react-redux' // Um hook que substitui Opera exatamente como o store.dispatch.
@@ -17,7 +17,6 @@ const NovoContatoTela = (props) => {
 
     const adicionarContato = () => {
         const acao = contatosActions.addContato(novoContatoNome, novoContatoTelefone)
-        // store.dispatch(acao)
         dispatch(acao)
         setNovoContatoNome('')
         props.navigation.goBack()
@@ -40,7 +39,7 @@ const NovoContatoTela = (props) => {
                 />
                 <Button 
                     title="OK"
-                    color={Cores.primary}
+                    color={Cores.primary} // Define a cor do botão
                     onPress={() => adicionarContato()}
                 />
             </View>

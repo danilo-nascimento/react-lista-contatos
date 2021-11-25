@@ -1,7 +1,8 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Button, View } from 'react-native'
 import { useSelector } from 'react-redux' // Um hook que retorna a fatia de estado que lhe interessa
 import ContatoItem from '../componentes/ContatoItem'
+import Cores from '../constantes/Cores'
 
 /**
  * 
@@ -20,25 +21,41 @@ const ListaDeContatosTela = (props) => {
      * e propriedade contatos seguinte foi definida no estadoInicial do reducer em store/contatos-reducer.js
      */
     return (
-        <FlatList
-            contentContainerStyle={styles.contatosWrap} // Estilo do Container
-            data={contatos} // Coleção de contatos
-            keyExtractor={contato => contato.id} // De onde vem a chave
-            renderItem={contato => ( // Como exibir
-                <ContatoItem
-                    nome={contato.item.nome} // a propriedade item é nativo
-                    telefone={contato.item.telefone}
+        <View style={styles.viewWrap}>
+            <FlatList
+                contentContainerStyle={styles.contatosWrap} // Estilo do Container
+                data={contatos} // Coleção de contatos
+                keyExtractor={contato => contato.id} // De onde vem a chave
+                renderItem={contato => ( // Como exibir
+                    <ContatoItem
+                        nome={contato.item.nome} // a propriedade item é nativo
+                        telefone={contato.item.telefone}
+                    />
+                )}
+            />
+            <View style={styles.buttonWrap}>
+                <Button
+                    title="OK"
+                    color={Cores.primary} // Define a cor do botão
+                    onPress={() => props.navigation.navigate('Novo Contato')}
                 />
-            )}
-        />
+            </View>
+        </View>
     )
 }
 
 export default ListaDeContatosTela
 
 const styles = StyleSheet.create({
+    viewWrap: {
+        paddingVertical: 150,
+    },
     contatosWrap: {
         justifyContent: 'center', // Centralizando ao centro
-        height: '100%' // Definindo altura como 100% possibilitando o efeito de centralização
+        alignSelf: 'center',
+    },
+    buttonWrap: {
+        width: 250,
+        margin: 'auto'
     }
 })

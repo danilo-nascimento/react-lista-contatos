@@ -15,9 +15,9 @@ const ContatoItem = (props) => {
             <View
                 style={styles.infoContainer} >
                 <Text
-                    style={styles.nome}>{props.nome}</Text>
+                    style={styles.text}>{props.nome}</Text>
                 <Text
-                    style={styles.telefone}>{props.telefone}</Text>
+                    style={styles.text}>{props.telefone}</Text>
             </View>
 
         </View>
@@ -41,16 +41,11 @@ const styles = StyleSheet.create({
         borderRadius: 7,
         textAlign: 'center'
     },
-    telefone: {
+    text: {
         color: '#777',
-        fontSize: 18,
+        fontSize: 16,
         marginBottom: 5
     },
-    nome: {
-        color: '#777',
-        fontSize: 18,
-        marginBottom: 5
-    }
 })
 
 export default ContatoItem

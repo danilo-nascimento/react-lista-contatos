@@ -4,7 +4,6 @@ import {
     Text,
     View // Agrupamento de elementos (como o div do HTML)
 } from 'react-native'
-import Cores from '../constantes/Cores'
 
 const ContatoItem = (props) => {
     
@@ -42,9 +41,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     text: {
-        color: '#777',
         fontSize: 16,
-        marginBottom: 5
     },
 })
 

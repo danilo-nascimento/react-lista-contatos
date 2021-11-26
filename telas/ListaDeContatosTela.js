@@ -3,7 +3,8 @@ import { FlatList, StyleSheet, Button, View, SafeAreaView, ScrollView } from 're
 import { useSelector } from 'react-redux' // Um hook que retorna a fatia de estado que lhe interessa
 import ContatoItem from '../componentes/ContatoItem'
 import Cores from '../constantes/Cores'
-
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
+import BotaoCabecalho from '../componentes/BotaoCabecalho'
 /**
  * 
  * Pegar a fatia de estado que lhe é interessante e renderizar
@@ -34,12 +35,18 @@ const ListaDeContatosTela = (props) => {
                 )}
             />
             <View style={styles.buttonWrap}>
-                <Button
-                    title="OK"
-                    color={Cores.primary} // Define a cor do botão
-                    onPress={() => props.navigation.navigate('Novo Contato')}
-                />
+                <HeaderButtons
+                    HeaderButtonComponent={BotaoCabecalho}>
+                    <Item
+                        title="Adicionar"
+                        iconName="md-add"
+                        onPress={() => {
+                            props.navigation.navigate('Novo Contato')
+                        }}
+                    />
+                </HeaderButtons>
             </View>
+            
         </ScrollView>
     )
 }
@@ -56,6 +63,8 @@ const styles = StyleSheet.create({
     },
     buttonWrap: {
         width: 250,
-        margin: 'auto'
+        margin: 'auto',
+        display: 'flex',
+        alignItems: 'flex-end'
     }
 })

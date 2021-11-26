@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
  * 
  * applyMiddleware intercepta as ações enviadas antes de chegar nas ações alvo. Está aqui de forma ilustrativa. Não seria necessário seu uso
  */
-const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+const store = createStore(rootReducer);
 
 export default function App() {
   /* Englobar no componente Provider para fazer a integração entre Redux e React. Assim é entregue o store pros componentes */

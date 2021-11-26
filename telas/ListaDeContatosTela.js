@@ -2,18 +2,15 @@ import React from 'react'
 import { FlatList, StyleSheet, Button, View, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux' // Um hook que retorna a fatia de estado que lhe interessa
 import ContatoItem from '../componentes/ContatoItem'
-import Cores from '../constantes/Cores'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import BotaoCabecalho from '../componentes/BotaoCabecalho'
 /**
  * 
  * Pegar a fatia de estado que lhe é interessante e renderizar
  * 
- * @param {*} props 
- * @returns 
  */
 const ListaDeContatosTela = (props) => {
-
+    //@ts-ignore
     const contatos = useSelector(estado => estado.contatos.contatos)
     /**
      * estado.contatos[nome do reducer que não tem sufixo].contatos[nome do pedaço de estado]
@@ -34,7 +31,7 @@ const ListaDeContatosTela = (props) => {
                     />
                 )}
             />
-            <View style={styles.buttonWrap}>
+            <View style={styles.buttonWrap}> {/**Tem como finalidade servir de referência para o botão alinhar a direita*/}
                 <HeaderButtons
                     HeaderButtonComponent={BotaoCabecalho}>
                     <Item

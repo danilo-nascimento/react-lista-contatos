@@ -15,7 +15,17 @@ const NovoContatoTela = (props) => {
         setNovoContatoTelefone(novoContatoTelefone)
     }
 
+    const novoContatoValido = (novoContatoNome, novoContatoTelefone) => {
+        if(novoContatoTelefone === '' || novoContatoNome === '') {
+            return false;
+        }
+    }
+
     const adicionarContato = () => {
+        if (novoContatoValido(novoContatoNome, novoContatoTelefone) === false) {
+            alert('Insira os dados para os dois campos');
+            return
+        }
         const acao = contatosActions.addContato(novoContatoNome, novoContatoTelefone)
         dispatch(acao)
         setNovoContatoNome('')

@@ -9,8 +9,8 @@ export const ADD_CONTATO = 'ADD_CONTATO' // Constante que tem como finalidade ev
  */
 export const addContato = (nome, telefone) => {
     return {
-        type: ADD_CONTATO,
-        dadosContato: {
+        type: ADD_CONTATO, // Obrigatório
+        dadosContato: { // Poderia ser outro nome (payload ou cargaUtil)
             nome: nome, // Poderia ser utilizada a abreviação
             telefone: telefone
         }

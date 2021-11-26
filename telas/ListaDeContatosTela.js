@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Button, View, SafeAreaView, ScrollView } from 're
 import { useSelector } from 'react-redux' // Um hook que retorna a fatia de estado que lhe interessa
 import ContatoItem from '../componentes/ContatoItem'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
-import BotaoCabecalho from '../componentes/BotaoCabecalho'
+import BotaoAdicionarContato from '../componentes/BotaoAdicionarContato'
 /**
  * 
  * Pegar a fatia de estado que lhe é interessante e renderizar
@@ -33,7 +33,7 @@ const ListaDeContatosTela = (props) => {
             />
             <View style={styles.buttonWrap}> {/**Tem como finalidade servir de referência para o botão alinhar a direita*/}
                 <HeaderButtons
-                    HeaderButtonComponent={BotaoCabecalho}>
+                    HeaderButtonComponent={BotaoAdicionarContato}>
                     <Item
                         title="Adicionar"
                         iconName="md-add"

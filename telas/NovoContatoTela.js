@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Button, ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import * as contatosActions from '../store/contatos-actions'
 import Cores from '../constantes/Cores'
-import { useDispatch } from 'react-redux' // Um hook que substitui Opera exatamente como o store.dispatch.
+import { useDispatch } from 'react-redux'
 
 const NovoContatoTela = (props) => {
     const [novoContatoNome, setNovoContatoNome] = useState('')
     const [novoContatoTelefone, setNovoContatoTelefone] = useState('')
-    const dispatch = useDispatch() // Ação necessária para uso do dispatch
+    const dispatch = useDispatch()
     const novoContatoNomeAlterado = (texto) => {
         setNovoContatoNome(texto)
     }
@@ -38,18 +38,18 @@ const NovoContatoTela = (props) => {
                 <TextInput 
                     style={styles.textInput} 
                     placeholder={'Digite um nome'}
-                    onChangeText={novoContatoNomeAlterado} /* Seguindo o princípio do menor privilégio, enquanto o texto é digitado apenas o estado é atualizado. Somente ao salvar será enviado ao estado centralizado. Manter como estado local é suficiente */
+                    onChangeText={novoContatoNomeAlterado} 
                     value={novoContatoNome}
                 />
                 <TextInput
                     style={styles.textInput}
                     placeholder={'Digite um telefone'}
-                    onChangeText={novoContatoEnderecoAlterado} /* Seguindo o princípio do menor privilégio, enquanto o texto é digitado apenas o estado é atualizado. Somente ao salvar será enviado ao estado centralizado. Manter como estado local é suficiente */
+                    onChangeText={novoContatoEnderecoAlterado} 
                     value={novoContatoTelefone}
                 />
                 <Button 
                     title="OK"
-                    color={Cores.primary} // Define a cor do botão
+                    color={Cores.primary}
                     onPress={() => adicionarContato()}
                 />
             </View>
@@ -61,7 +61,7 @@ export default NovoContatoTela
 
 const styles = StyleSheet.create({
     contatoWrap: {
-        justifyContent: 'center', // Centralizando ao centro
+        justifyContent: 'center',
     },
     form: {
         marginTop: 50,

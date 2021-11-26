@@ -2,7 +2,7 @@ import React from 'react';
 import {
     StyleSheet,
     Text,
-    View // Agrupamento de elementos (como o div do HTML)
+    View 
 } from 'react-native'
 
 const ContatoItem = (props) => {
@@ -26,16 +26,16 @@ const ContatoItem = (props) => {
 const styles = StyleSheet.create({
     contatoItem: {
         borderBottomColor: '#CCC',
-        alignItems: 'center', // Determina que os itens estão alinhados no centro
+        alignItems: 'center', 
         
     },
     infoContainer: {
         width: 250,
-        paddingVertical: 15, // espaço vertical entre a borda e o conteúdo Image e View
-        paddingHorizontal: 15, // espaço horizontal entre a borda e o conteúdo Image e View
-        justifyContent: 'center', // Operando na vertical já que não foi definido o flexDirection com row
+        paddingVertical: 15, 
+        paddingHorizontal: 15, 
+        justifyContent: 'center', 
         alignItems: 'center',
-        borderWidth: 1, // Sem essa declaração a borda não aparece
+        borderWidth: 1, 
         marginBottom: 5,
         borderRadius: 7,
         textAlign: 'center'

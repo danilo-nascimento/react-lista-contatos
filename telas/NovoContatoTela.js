@@ -11,7 +11,7 @@ const NovoContatoTela = (props) => {
     const novoContatoNomeAlterado = (texto) => {
         setNovoContatoNome(texto)
     }
-    const novoContatoEnderecoAlterado = (novoContatoTelefone) => {
+    const novoContatoTelefoneAlterado = (novoContatoTelefone) => {
         setNovoContatoTelefone(novoContatoTelefone)
     }
 
@@ -29,6 +29,7 @@ const NovoContatoTela = (props) => {
         const acao = contatosActions.addContato(novoContatoNome, novoContatoTelefone)
         dispatch(acao)
         setNovoContatoNome('')
+        setNovoContatoTelefone('')
         props.navigation.goBack()
 
     }
@@ -44,7 +45,7 @@ const NovoContatoTela = (props) => {
                 <TextInput
                     style={styles.textInput}
                     placeholder={'Digite um telefone'}
-                    onChangeText={novoContatoEnderecoAlterado} 
+                    onChangeText={novoContatoTelefoneAlterado}
                     value={novoContatoTelefone}
                 />
                 <Button 

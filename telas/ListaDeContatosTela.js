@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, StyleSheet, Button, View } from 'react-native'
+import { FlatList, StyleSheet, Button, View, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux' // Um hook que retorna a fatia de estado que lhe interessa
 import ContatoItem from '../componentes/ContatoItem'
 import Cores from '../constantes/Cores'
@@ -21,7 +21,7 @@ const ListaDeContatosTela = (props) => {
      * e propriedade contatos seguinte foi definida no estadoInicial do reducer em store/contatos-reducer.js
      */
     return (
-        <View style={styles.viewWrap}>
+        <ScrollView style={styles.viewWrap}>
             <FlatList
                 contentContainerStyle={styles.contatosWrap} // Estilo do Container
                 data={contatos} // Coleção de contatos
@@ -40,7 +40,7 @@ const ListaDeContatosTela = (props) => {
                     onPress={() => props.navigation.navigate('Novo Contato')}
                 />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

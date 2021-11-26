@@ -1,11 +1,11 @@
 import React from 'react'
-import { HeaderButton } from 'react-navigation-header-buttons'
-import { Ionicons } from '@expo/vector-icons'
+import { HeaderButton } from 'react-navigation-header-buttons' // biblioteca de terceiros
+import { Ionicons } from '@expo/vector-icons' // biblioteca de terceiros
 import Cores from '../constantes/Cores'
-const BotaoCabecalho = (props) => {
+const BotaoAdicionarContato = (props) => {
   return (
     <HeaderButton
-      {...props}
+      {...props} // Obrigatório. Testei sem e quebrou
       IconComponent={Ionicons}
       iconSize={23}
       color={'#fff'}
@@ -22,4 +22,4 @@ const BotaoCabecalho = (props) => {
   )
 }
 
-export default BotaoCabecalho
+export default BotaoAdicionarContato

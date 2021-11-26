@@ -1,3 +1,6 @@
+/**
+ * Componente que engloba dados do contato
+ */
 import React from 'react';
 import {
     StyleSheet,
@@ -7,9 +10,9 @@ import {
 
 const ContatoItem = (props) => {
     
-    return (
-        <View
-            style={styles.contatoItem}>
+    return ( // isto é  um JSX
+        <View // serve como agrupamento. no caso de versão web é como uma div
+            style={styles.contatoItem}> {/** define qual propriedade e seu estilo */}
 
             <View
                 style={styles.infoContainer} >
@@ -23,7 +26,8 @@ const ContatoItem = (props) => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ // Responsavel pelo estilo (css)
+    // Quase todos os componentes são display flex
     contatoItem: {
         borderBottomColor: '#CCC',
         alignItems: 'center', // Determina que os itens estão alinhados no centro

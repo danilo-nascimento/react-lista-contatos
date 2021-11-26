@@ -1,14 +1,19 @@
+/**
+ * É aqui aonde são adicionados novos dados ao estado no Redux
+ */
 import React, { useState } from 'react'
 import { Button, ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import * as contatosActions from '../store/contatos-actions'
 import Cores from '../constantes/Cores'
 import { useDispatch } from 'react-redux' // Um hook que substitui Opera exatamente como o store.dispatch.
 
-const NovoContatoTela = (props) => {
-    const [novoContatoNome, setNovoContatoNome] = useState('')
-    const [novoContatoTelefone, setNovoContatoTelefone] = useState('')
+const NovoContatoTela = (props) => { // Componente
+    const [novoContatoNome, setNovoContatoNome] = useState('') // Estados locais. Não estão no Redux - useState
+    const [novoContatoTelefone, setNovoContatoTelefone] = useState('')// Estados locais. Não estão no Redux - useState
+    // São utilizados estados locais inicialmente por causa do princípio do menor privilégio.
+
     const dispatch = useDispatch() // Ação necessária para uso do dispatch
-    const novoContatoNomeAlterado = (texto) => {
+    const novoContatoNomeAlterado = (texto) => { // função que vai alterando o valor do estado local
         setNovoContatoNome(texto)
     }
     const novoContatoEnderecoAlterado = (novoContatoTelefone) => {
@@ -22,13 +27,14 @@ const NovoContatoTela = (props) => {
     }
 
     const adicionarContato = () => {
-        if (novoContatoValido(novoContatoNome, novoContatoTelefone) === false) {
+        if (novoContatoValido(novoContatoNome, novoContatoTelefone) === false) { // isto é opcional.
             alert('Insira os dados para os dois campos');
             return
         }
         const acao = contatosActions.addContato(novoContatoNome, novoContatoTelefone)
-        dispatch(acao)
-        setNovoContatoNome('')
+        dispatch(acao) // Executa a ação via reducer
+        setNovoContatoNome('') // Zera o nome do contato
+        setNovoContatoTelefone('') // Precisa adicionar
         props.navigation.goBack()
 
     }
